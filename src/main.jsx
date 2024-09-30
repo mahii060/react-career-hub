@@ -4,6 +4,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import Root from './components/Root/Root';
 import Home from './components/Home/Home';
+import PropTypes from 'prop-types';
 
 const router = createBrowserRouter([
   {
@@ -23,3 +24,12 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </StrictMode>,
 )
+
+
+/**
+ *
+ MyComponent.propTypes = {
+  optionalArray: PropTypes.array,
+  } 
+ *
+ */

@@ -35,4 +35,17 @@ export default [
       ],
     },
   },
+  {
+    // Special Node.js environment configuration
+    files: ['*.config.js'],  // Target config files like 'eslint.config.js'
+    languageOptions: {
+      globals: globals.node,  // Apply Node.js globals like `require`
+    },
+    env: {
+      node: true, // Enable Node.js environment
+    },
+    rules: {
+      // Any additional rules for Node-specific files
+    },
+  },
 ]

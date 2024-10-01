@@ -8,6 +8,10 @@ import Jobs from './pages/Jobs';
 import Blogs from './pages/Blogs';
 import Home from './pages/Home';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import JobDetails from './components/JobDetails/JobDetails';
+import { ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +35,12 @@ const router = createBrowserRouter([
         path: '/blogs',
         element: <Blogs />
       },
+      {
+        path: '/job/:id',
+        element: <JobDetails />,
+        loader: () => fetch('../public/jobs.json')
+      },
+
     ]
   },
 ]);
@@ -38,6 +48,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer />
   </StrictMode>,
 )
 

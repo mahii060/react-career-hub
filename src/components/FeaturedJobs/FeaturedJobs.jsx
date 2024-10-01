@@ -3,6 +3,7 @@ import FeaturedJob from "../FeaturedJob/FeaturedJob";
 
 const FeaturedJobs = () => {
     const [jobs, setJobs] = useState([])
+    const [dataLength, setDataLength] = useState(4)
 
     useEffect(() => {
         fetch('jobs.json')
@@ -10,13 +11,22 @@ const FeaturedJobs = () => {
             .then(data => setJobs(data))
     }, [])
     return (
-        <div className="text-center">
-            <h1 className="text-3xl">Featured Jobs here: {jobs.length}</h1>
-            <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
-            <div className="grid grid-cols1 ms:grid-cols-2 lg:grid-cols-3 gap-15">
-                {jobs.map(job => <FeaturedJob key={job.id} job={job}></FeaturedJob>)}
+        <div className="">
+            <h1 className="text-center text-6xl font-bold mt-12">Featured Jobs</h1>
+            <p className="text-center text-lg my-8 text-gray-600">Explore thousands of job opportunities with all the information you need. Its your future</p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {jobs.slice(0, dataLength).map(job => <FeaturedJob key={job.id} job={job}></FeaturedJob>)}
+            </div>
+            <div className="flex justify-center my-5">
+                <button
+                    onClick={() => setDataLength(dataLength === 4 ? jobs.length : 4)}
+                    className="btn btn-primary"
+                >
+                    {dataLength === 4 ? "Show All" : "Show Less"}
+                </button>
             </div>
         </div>
+
     );
 };
 

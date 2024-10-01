@@ -3,9 +3,8 @@ import { Link, useRouteError } from "react-router-dom";
 const ErrorPage = () => {
     const error = useRouteError();
     const { data } = error;
-    console.log(error);
     return (
-        <section className="flex items-center h-full sm:p-16 bg-gray-50 text-gray-800">
+        <section className="flex items-center h-full sm:p-16 bg-gray-300 text-gray-800">
             <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8 space-y-8 text-center sm:max-w-md">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-40 h-40 text-red-500">
                     <path fill="currentColor" d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM403.078,403.078a207.253,207.253,0,1,1,44.589-66.125A207.332,207.332,0,0,1,403.078,403.078Z"></path>
@@ -15,7 +14,7 @@ const ErrorPage = () => {
                 </svg>
                 <p className="text-red-500 text-2xl font-semibold md:text-3xl">{data}</p>
                 <p className="mt-4 mb-8 text-gray-800 text-xl">But do not worry, you can find plenty of other things on our homepage.</p>
-                <Link to="/" className="px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50">Back to homepage</Link>
+                <Link to="/" className="px-8 py-3 font-semibold rounded bg-gray-600 text-gray-50 hover:scale-105 transition">Back to homepage</Link>
             </div>
         </section>
     );

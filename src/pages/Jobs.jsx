@@ -12,7 +12,7 @@ const Jobs = () => {
     useEffect(() => {
         const storedJobIds = getStoredJobApplication();
         if (jobs.length) {
-            const jobsApplied = jobs.filter(job => storedJobIds.includes(job.id))
+            const jobsApplied = Array.isArray(jobs) ? jobs.filter(job => storedJobIds.includes(job.id)) : [];
             setAppliedJobs(jobsApplied)
             setDisplayJobs(jobsApplied)
 
@@ -24,11 +24,11 @@ const Jobs = () => {
             setDisplayJobs(appliedJobs)
         }
         else if (filter === 'remote') {
-            const remoteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Remote')
+            const remoteJobs = Array.isArray(appliedJobs) ? appliedJobs.filter(job => job.remote_or_onsite === 'Remote') : [];
             setDisplayJobs(remoteJobs)
         }
         else if (filter === 'onsite') {
-            const onsiteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Onsite')
+            const onsiteJobs = Array.isArray(appliedJobs) ? appliedJobs.filter(job => job.remote_or_onsite === 'Onsite') : [];
             setDisplayJobs(onsiteJobs)
         }
     }

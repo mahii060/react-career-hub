@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { AiOutlineDollar } from 'react-icons/ai';
 import { IoLocationOutline } from 'react-icons/io5';
 const Job = ({ job }) => {
-    const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
+    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
     return (
         <div className="card lg:card-side bg-base-100 p-7 border">
             <figure>

@@ -17,8 +17,8 @@ const JobDetails = () => {
     const { contact_information } = job;
     const { email, phone } = contact_information;
 
-    const handleApplyNow = id => {
-        saveJobApplication(id)
+    const handleApplyNow = () => {
+        saveJobApplication(idInt)
         toast.success('You successfully applied for the job!')
     }
 
@@ -78,7 +78,7 @@ const JobDetails = () => {
                         </div>
                     </div>
                     <div className="text-center mt-6">
-                        <button onClick={() => handleApplyNow(id)} className="w-full btn btn-primary">Apply Now</button>
+                        <button onClick={handleApplyNow} className="w-full btn btn-primary">Apply Now</button>
                     </div>
                 </div>
             </div>

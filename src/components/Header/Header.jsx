@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+// import bgImage from '../../assets/images/bg1.png'
 
 const Header = () => {
     const links = <>
@@ -8,7 +9,7 @@ const Header = () => {
         <li><NavLink className={({ isActive }) => isActive ? "active underline" : ""} to="/blogs">Blogs</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-200">
+        <div className="navbar bg-violet-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
